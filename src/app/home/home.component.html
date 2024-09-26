@@ -1,0 +1,101 @@
+<body>
+  <section class="main-text">
+    <section>
+
+      <!---Sidebar side area-->
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)"  class="closebtn" (click)="closeNav()">x</a>       
+          
+      <!---Filters in sidebar-->
+         <form>
+          <div class="filter-group">                                         
+            
+            <div class="filter-price"> <!--Price Filters-->   
+              <h4>PRICE</h4>
+              <input type="checkbox" id="price" name="price" (click)="priceLowToHigh($event)"/>
+              <label for="price">Price: Low to High</label>
+
+              <div>
+                <input type="checkbox" id="price" name="price" (click)="boxClicked($event)"/>   
+                <label for="price">Price: High To Low</label>              
+              </div>
+            </div>
+
+            <div class="filter-rooms"><!--filter by rooms-->
+              
+              <div>
+                <h4>ROOMS</h4>
+                <input type="checkbox" id="rooms"name="rooms" (click)="sortingByRoom($event)"/>
+                <label for="rooms">Number of Rooms</label>
+              </div>
+            </div>
+
+            <div class="filter-wifi"> <!---Filter by wifi-->
+              <h4 class="wifi">WIFI</h4>
+              <input type="checkbox" id="wifi" class="wifi" id="sortingByWifi" (click)="wifiClicked($event)"/>
+              <label for="wifi">WiFi Availability</label>
+            </div>
+
+            <div class="filter-laundary">   <!--filter by laundary-->
+              <h4>LAUNDRY</h4>
+              <input type="checkbox" id="laundry" name="laundry" (click)="laundryAvailable($event)"/>
+              <label for="laundry">Laundry Availability</label>
+            </div>
+
+
+            <div class="filter-city"><!--Filter by state-->
+              <h4>STATE</h4>
+              <div>
+                <input type="checkbox" id="city" name="city" (click)="stateIllinois($event)"/>
+                <label for="il">Illinois</label>
+              </div>
+
+              <div>
+                <input
+                  type="checkbox" id="city" name="city" (click)="stateCalifornia($event)"/>
+                <label for="ca">California</label>
+              </div>
+              <input type="checkbox" id="city" name="city" (click)="stateOrlando($event)"/>
+              <label for="or">Orlando</label>
+             
+              <div>
+                <input type="checkbox" id="city" name="city" (click)="stateAlaska($event)"/>
+                <label for="al">Alaska</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!--Sidebar main component-->
+
+      <div id="main">
+        <button class="openbtn" (click)="openNav()">&#9776;</button>
+      </div>
+    </section>
+                        <!---Search bar-->
+    <div class="text">
+      <h1 class="house-h2">Looking for a house?</h1>
+      <input type="text" placeholder="Filter by city" (input)="filterByInput($event)" />
+    </div>
+
+        <!---Image-->
+    <form class="form-container">
+      <img
+        src="https://s.zigbang.com/v1/web/main/zigbangWeb_heroImg_1680.jpg"
+        class="looking-for-a-house-photo" alt="" srcset="" />
+    </form>
+  </section>
+
+
+  <!--Imported items  -->
+
+  <section class="results">
+    <app-housing-location-one *ngFor="let housingLocation of filteredLocationList"
+      [housingLocationChild]="housingLocation">
+    
+  </app-housing-location-one>
+  </section>
+
+  <app-footer></app-footer>
+</body>

@@ -1,0 +1,200 @@
+body{
+ background-color:rgb(247 217 217);
+
+}
+
+h2{
+  font-size: larger;
+}
+
+.parent{
+  position: relative;
+  height: 100px;
+  width: 300px;
+  margin-top: 20px;
+}
+
+
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 350px));
+    margin-top: 50px;
+    justify-content: space-around;
+  }
+  
+  input[type="text"] {
+    padding: 12px;
+    border-radius: 40px;
+    margin-right: 4px;
+    margin-top: 5px;
+    display: inline-block;
+    width: 94%;
+    text-align: center;
+    background-color: lavenderblush;
+  }
+
+  
+  button {
+    padding: 15px;
+    border: solid 1px var(--primary-color);
+    cursor: pointer;
+    background: brown;
+    color: white;
+    border-radius: 8px;
+  }
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .text{
+    font-size: 29px;
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    left: 42%;
+    top: 4%;
+    height: 20px;
+    color: lavender;
+   }
+  
+ .more-filters{
+  display: flex;
+  justify-content: center;
+ margin-top: 10px;
+  gap: 10px;
+ }
+ .main-text{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: revert;
+ }
+.looking-for-a-house-photo{
+  position: relative;
+  height: 150%;
+  width: 95%;
+  margin-top: 30px;
+  border-radius: 15px;
+
+  
+}
+.house-h2{
+  color: rgb(229, 190, 190);
+  font-weight: bold;
+}
+
+  @media (min-width: 500px) and (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    input[type="text"] {
+        width: 70%;
+    }   
+  }
+  
+  @media (max-width: 499px) {
+    .results {
+        grid-template-columns: 1fr;
+    }    
+  }
+
+
+
+
+/* The sidebar menu */
+.sidebar {
+  height: 100%; 
+  width: 0; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  font-family: cursive;
+  font-size: 13.5px;
+  
+  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 40px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+
+  border-radius: 1% 14% 64%;
+}
+
+.sidebar{
+  width:210px
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid pink;
+  position: absolute;
+  left: 0%;
+  top: 0; 
+  font-family: cursive;
+}
+
+.openbtn:hover {
+  background-color: #874676;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.filter-price{
+  margin: 100px 0px 20px 0px
+}
+
+.filter-wifi{
+  margin: 30px 0px 30px 0px
+}
+.filter-city{
+  margin: 30px 0px 30px 0px
+}
+label{
+  margin-left: 2px;
+}

@@ -1,0 +1,93 @@
+<body>
+  <div class="container">
+
+    <main>
+      <section class="property-header">
+        <div class="property-image">
+          <img [src]="housingLocation?.photo" alt="House Image">
+          <h2>{{housingLocation?.name}}</h2>
+          <h3>{{housingLocation?.city}}, {{housingLocation?.state}}</h3>
+        </div>
+
+
+        <div class="property-info">
+          <div class="property-stats">
+
+            <div class="stat">
+              <h3>Area</h3>
+              <p> {{housingLocation?.area | uppercase}}</p>
+            </div>
+            <div class="stat">
+              <h3>Rent Price</h3>
+              <p>{{housingLocation?.price | currency }} /mo</p>
+            </div>
+
+            <div class="stat">
+              <h3>Rooms Available</h3>
+              <p>{{housingLocation?.rooms}} </p>
+            </div>
+            <div class="stat">
+              <h3>Wifi Available</h3>
+              <p>{{housingLocation?.wifi}}</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      
+      
+      <section>
+        <section class="property-details">
+          <div class="property-map">
+            <h2>Location</h2>
+            <img src="https://cdn.buttercms.com/Ym1iRZNbRHOeWv0X4x3w" alt="Map">
+          </div>
+
+          <form [formGroup]="applyForm" (ngSubmit)="submitApplication()">
+            <div>
+              <h1 class="form-text">Feel free to contact us</h1>
+              <label for="firstName">First Name:</label>
+              <input id="firstName" formControlName="firstName"> <!----->
+      
+              <div *ngIf="applyForm.get('firstName')?.invalid && applyForm.get('firstName')?.touched">
+                First Name is required.
+              </div>
+
+            </div>
+      
+          <div>
+            <label for="lastName">Last Name:</label>
+            <input id="lastName" formControlName="lastName">
+            <div *ngIf="applyForm.get('lastName')?.invalid && applyForm.get('lastName')?.touched">
+              Last Name is required.
+            </div>
+          </div>
+      
+          <div>
+            <label for="email">Email:</label>
+            <input id="email" formControlName="email">
+            
+            <div *ngIf="applyForm.get('email')?.invalid && applyForm.get('email')?.touched">
+              <div *ngIf="applyForm.get('email')?.errors?.['required']">
+                Email is required.
+              </div>
+              <div *ngIf="applyForm.get('email')?.errors?.['email']">
+                Email must be in a valid format.
+              </div>
+            </div>
+          </div>
+      
+          <button type="submit" [disabled]="applyForm.invalid">Submit</button>
+          <button type="button"  (click)="goBack()">Go Back</button>
+        </form>
+      
+      </section>
+      
+    </section>
+
+      
+
+    </main>
+  </div>
+
+</body>

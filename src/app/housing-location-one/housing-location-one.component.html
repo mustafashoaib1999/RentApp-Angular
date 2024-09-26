@@ -1,0 +1,17 @@
+<body>
+  <section class="listing">
+                                <!--[src]---->
+    <img class="listing-photo" [src]="housingLocationChild.photo" srcset="">    
+    <h2 class="listing-heading">{{ housingLocationChild.name }}</h2>
+    <p class="listing-location">{{ housingLocationChild.city}}, {{housingLocationChild.state }}</p>
+    <p class="listing-price">No of rooms:{{housingLocationChild.rooms}}  </p>
+    <p class="listing-price">{{housingLocationChild.price | currency}} / Month</p>
+  
+   <!---Routerlink added -->
+    <a [routerLink]="['/details', housingLocationChild.id]">Learn More></a>
+
+  </section>
+
+  
+
+</body>

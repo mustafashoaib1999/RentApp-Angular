@@ -1,0 +1,40 @@
+.footer {
+
+  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-radius: 80% 80% 0% 0% ;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-info p {
+  margin: 5px 0;
+}
+
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+}
